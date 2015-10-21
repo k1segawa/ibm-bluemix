@@ -26,18 +26,8 @@
 	  float cpuload;
   };
 
-//segawa add
-  struct json2 {
-	  char myname[100];
-	  float temp;
-	  float hum;
-	  float pressure;
-  };
-
   /* This is the short hand for json */
   typedef struct json JsonMessage;
-//segawa add
-  typedef struct json2 JsonMessage2;
 
 //constants
 #define MAXBUF 100

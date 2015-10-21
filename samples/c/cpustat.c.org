@@ -24,11 +24,6 @@ int SIZE = 8;
 char cputemploc[255] = "/sys/class/thermal/thermal_zone0/temp";
 char cpuloadloc[255] = "/proc/loadavg";
 
-//segawa add
-char tmphmpsloc[255] =
-"/usr/bin/sudo /usr/bin/python /home/pi/bme280_sample.py";
-void GetTempDatas(float *, float *, float *);
-
 float getCPUTemp();
 float GetCPULoad();
 
@@ -60,14 +55,4 @@ float GetCPULoad() {
 	fclose(f1);
         return (load1);
 
-}
-
-//segawa add
-void GetTempDatas(float *temp, float *hum, float *pressure) {
-
-	FILE *f1;
-
-	f1 = popen(tmphmpsloc, "r");
-	fscanf( f1, "%f ,  %f, %f", temp, hum, pressure );
-	fclose(f1);
 }
